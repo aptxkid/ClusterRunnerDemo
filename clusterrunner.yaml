@@ -8,11 +8,11 @@ Simple:
         - echo "Performing teardown"
 
     commands:
-        - sleep 1
-        - echo $TOKEN
+        - ping 127.0.0.1 -n 5
+        - echo !TOKEN!
 
     atomizers:
-        - TOKEN: seq 1 10
+        - TOKEN: FOR /l %n in (0, 1, 9) DO @echo %n
 
 
 PHPUnit:
